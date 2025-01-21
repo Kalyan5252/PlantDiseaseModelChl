@@ -3,12 +3,15 @@ from PIL import Image
 import numpy as np
 import os
 app = Flask(__name__)
-from tensorflow.keras.models import load_model
+from tensorflow.keras.models import Model, load_model
+
 
 
 # Load your trained model
-MODEL_PATH = "./models/chillimodel.h5"  
+MODEL_PATH = "./models/chillimodel2.h5"  
 model = load_model(MODEL_PATH,compile=False)
+
+
 
 # Define classes
 classes = ['cerocospora','healthy','murda complex','nutritional deficiency','powdery mildew']
