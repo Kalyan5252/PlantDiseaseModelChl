@@ -57,4 +57,4 @@ def index():
     return "Welcome to the Plant Disease Detection API of Chilli Model! Use the `/classify` endpoint to classify images."
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=False)
