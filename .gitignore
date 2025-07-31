@@ -1,3 +1,6 @@
 ./vsenv
 .vsenv
 /vsenv
+planenv/
+/planenv
+/planenv/lib
