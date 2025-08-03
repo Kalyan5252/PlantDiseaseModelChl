@@ -1,5 +1,6 @@
 from fastapi import FastAPI, File, UploadFile, HTTPException, Form
 from fastapi.responses import JSONResponse
+from fastapi.middleware.cors import CORSMiddleware
 from fastapi import UploadFile, File
 import tensorflow as tf
 import numpy as np
@@ -13,6 +14,13 @@ from tensorflow.keras.preprocessing import image
 from utils import preprocess_image
 
 app = FastAPI()
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # or ["*"] to allow all
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 global_classifier_model = tf.keras.models.load_model("models/plant_classifier.h5")
 chilli_model = tf.keras.models.load_model("models/chilli_model.h5")
